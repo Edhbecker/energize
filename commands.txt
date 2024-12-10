@@ -1,0 +1,4 @@
+npm install -g nextui-cli
+
+https://nextui.org/docs/guide/installation
+
