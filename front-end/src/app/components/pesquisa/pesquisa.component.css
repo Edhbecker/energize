@@ -1,0 +1,106 @@
+/* Container principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px; /* Ajuste para posicionar a pesquisa */
+}
+
+/* Área da barra de pesquisa */
+.search-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Ajusta a posição da barra */
+  width: 90%; /* Usa uma largura relativa para telas menores */
+  max-width: 800px; /* Limita a largura da área */
+}
+
+/* Barra de input */
+.input {
+  flex-grow: 1; /* Faz o input ocupar o espaço disponível */
+  max-width: 400px; /* Define largura máxima */
+  height: 20px; /* Altura da barra de pesquisa */
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #53535f;
+  caret-color: #f7f7f8;
+  color: #fff;
+  padding: 7px 10px;
+  border: 2px solid transparent;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  transition: all 0.2s ease;
+}
+
+/* Efeito de hover na barra de input */
+.input:hover {
+  border: 2px solid rgba(255, 255, 255, 0.16);
+}
+
+/* Efeito de foco na barra de input */
+.input:focus {
+  border: 2px solid #a970ff;
+  background-color: #0e0e10;
+}
+
+/* Botão de pesquisa */
+.search__btn {
+  border: none;
+  cursor: pointer;
+  background-color: rgba(42, 42, 45, 1);
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  height: 38px; /* Ajustado para alinhar com a altura do botão */
+  width: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Efeito de hover no botão de pesquisa */
+.search__btn:hover {
+  background-color: rgba(54, 54, 56, 1);
+}
+
+/* Linha contínua */
+.dashed-line {
+  width: 100%;
+  border-bottom: 3px solid #ccc; /* Linha contínua */
+  margin-top: 25px; /* Espaçamento entre a linha e o conteúdo */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .input {
+    max-width: 100%; /* Ocupa toda a largura disponível */
+    height: 36px; /* Aumenta a altura para melhor toque em dispositivos móveis */
+    font-size: 16px; /* Texto maior para melhor legibilidade */
+  }
+
+  .search__btn {
+    height: 36px; /* Ajusta altura para combinar com o input */
+    width: 40px; /* Botão maior para toque mais fácil */
+  }
+
+  .dashed-line {
+    margin-top: 20px; /* Menor espaçamento em telas pequenas */
+  }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .search-area {
+    flex-direction: column; /* Alinha input e botão verticalmente */
+    gap: 10px; /* Espaçamento entre os elementos */
+  }
+
+  .input {
+    max-width: 100%; /* Ocupa toda a largura */
+  }
+
+  .search__btn {
+    width: 100%; /* Botão ocupa toda a largura */
+  }
+}

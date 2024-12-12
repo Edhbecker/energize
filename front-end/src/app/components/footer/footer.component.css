@@ -58,3 +58,8 @@
     fill: #25d366;
   }
   
+  .facebookSvg:hover {
+    fill: #4267B2; /* Azul do Facebook */
+}
+
+  
