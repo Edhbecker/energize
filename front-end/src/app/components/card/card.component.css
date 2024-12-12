@@ -55,7 +55,7 @@
   /*Text*/
   .title {
     position: absolute;
-    bottom: 1rem;
+    bottom: -1rem; /*Ajuste para sair o title principal do card, após transição*/
     font-weight: 700;
     font-size: 1.5rem;
     transition: transform .25s ease-out;
