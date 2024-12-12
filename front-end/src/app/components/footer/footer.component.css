@@ -1,0 +1,60 @@
+.footer {
+    background-color: #333;
+    padding: 30px;
+    color: white;
+    margin-top: 40px; /* Ajusta o espaçamento entre o conteúdo e o footer */ 
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-info, .footer-links, .footer-social {
+    flex: 1;
+  }
+  
+  .footer-social {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .card {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  .socialContainer {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .socialContainer:hover {
+    transform: scale(1.2);
+  }
+  
+  .socialSvg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+  }
+  
+  .instagramSvg:hover {
+    fill: #e4405f;
+  }
+  
+  .twitterSvg:hover {
+    fill: #1da1f2;
+  }
+  
+  .linkdinSvg:hover {
+    fill: #0077b5;
+  }
+  
+  .whatsappSvg:hover {
+    fill: #25d366;
+  }
+  

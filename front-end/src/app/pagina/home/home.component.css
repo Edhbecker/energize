@@ -1,0 +1,50 @@
+/* Contêiner principal */
+.container {
+    display: flex;
+    justify-content: center; /* Centraliza o wrapper */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Wrapper para os cards */
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espaçamento uniforme entre colunas e linhas */
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    row-gap: 100px; /* Espaçamento entre as linhas */
+    column-gap: 20px; /* Espaçamento entre as colunas */
+}
+
+/* Estilo para os cards */
+.card-wrapper > * {
+    flex: 1 1 calc(25% - 20px); /* Cada card ocupa 25% da linha menos o gap */
+    max-width: calc(25% - 20px); /* Garante que os cards não excedam 25% */
+    box-sizing: border-box;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .card-wrapper > * {
+        flex: 1 1 calc(33.33% - 20px); /* 3 cards por linha */
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-wrapper > * {
+        flex: 1 1 calc(50% - 20px); /* 2 cards por linha */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card-wrapper > * {
+        flex: 1 1 100%; /* 1 card por linha */
+        max-width: 100%;
+    }
+}
