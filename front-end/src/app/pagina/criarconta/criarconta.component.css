@@ -1,12 +1,25 @@
 .form-container {
-    width: 350px;
-    height: 550px;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 20px 30px;
-  }
+  width: 350px; /* Define a largura do container */
+  height: 550px; /* Define a altura do container */
+  background-color: #fff; /* Define a cor de fundo como branca */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; /* Define uma sombra leve ao redor do container */
+  border-radius: 10px; /* Define bordas arredondadas com raio de 10px */
+  box-sizing: border-box; /* Faz com que a largura e a altura incluam as bordas e os preenchimentos */
+  padding: 20px 30px; /* Adiciona preenchimento interno ao container (20px superior e inferior, 30px à esquerda e à direita) */
+
+  /* Ajuste para centralizar o conteúdo dentro do container */
+  display: flex; /* Faz com que o container seja um flexbox */
+  flex-direction: column; /* Define a direção dos itens filho como coluna */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+
+  /* Posiciona o container no centro da página */
+  position: fixed; /* Mantém o container fixo na tela */
+  top: 50%; /* Alinha o topo do container na metade vertical da tela */
+  left: 50%; /* Alinha a margem esquerda do container na metade horizontal da tela */
+  transform: translate(-50%, -50%); /* Ajusta o posicionamento para que o container pareça centralizado */
+}
+
   
   .title {
     text-align: center;

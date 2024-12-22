@@ -1,10 +1,27 @@
-<div class="topnav">
-  <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-  <!-- <a routerLink="/emprestimos" routerLinkActive="active" ariaCurrentWhenActive="page">Emprestimos</a>
-  <a routerLink="/pessoas" routerLinkActive="active" ariaCurrentWhenActive="page">Pessoas</a>
-  <a routerLink="/livros" routerLinkActive="active" ariaCurrentWhenActive="page">Livros</a>
-  <a routerLink="/autores" routerLinkActive="active" ariaCurrentWhenActive="page">Autores</a>
-  <a routerLink="/criarconta" routerLinkActive="active" ariaCurrentWhenActive="page">Sign up</a>-->
-  <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
+<div class="radio-inputs">
+  <label class="radio">
+    <input type="radio" name="radio" checked="" />
+    <span class="name" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Home</span>
+  </label>
+
+  <label class="radio">
+    <input type="radio" name="radio" />
+    <span class="name" routerLink="/sobrenos" routerLinkActive="active" ariaCurrentWhenActive="page">Sobre Nós</span>
+  </label>
+
+  <label class="radio" *ngIf="usuarioadmin == true">
+    <input type="radio" name="radio" />
+    <span class="name" routerLink="/cadastro" routerLinkActive="active" ariaCurrentWhenActive="page">Cadastro</span>
+  </label>
+
+  <div>
+    <div class="user" *ngIf="usuariologado == false">
+      <app-userdeslogado></app-userdeslogado>
+    </div>
+    <div class="user" *ngIf="usuariologado == true">
+      <app-userlogado></app-userlogado>
+    </div>
+  </div>
+  
 </div>
 <router-outlet></router-outlet>

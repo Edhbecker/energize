@@ -15,10 +15,31 @@
     flex: 1;
   }
   
-  .footer-social {
+  /*.footer-social {
     display: flex;
     justify-content: space-around;
+  }*/
+
+  .footer-social  {
+    display: flex;
+    flex-direction: column; /* Organiza o texto e os ícones em uma coluna */
+    align-items: flex-end; /* Alinha o conteúdo à direita */
+    text-align: center; /* Centraliza o texto individualmente */
+    padding-right: 20px; /* Adiciona espaçamento à direita */
   }
+  
+  .footer-social h4 {
+    margin: 0; /* Remove margens extras */
+    padding: 0; /* Remove qualquer padding que possa interferir */
+    text-align: left; /* Alinha o texto à esquerda */
+    display: block; /* Garante que o h4 seja tratado como um bloco */
+}
+
+
+  .footer-funcionamento a {
+    display: block; /* Garante que cada <a> ocupe uma linha inteira */
+  }
+  
   
   .card {
     display: flex;
