@@ -3,17 +3,17 @@
 <app-carrossel></app-carrossel>
 
 <div class="container">
-    <div class="card-wrapper">
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
+  <div class="card-wrapper">
+    <div *ngFor="let card of cards">
+      <app-card 
+        [titulo]="card.titulo" 
+        [descricao]="card.descricao" 
+        [categoria]="card.categoria" 
+        [imagem]="card.imagem">
+      </app-card>
     </div>
+  </div>
 </div>
-
+ 
 
 <app-footer></app-footer>

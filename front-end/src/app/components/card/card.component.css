@@ -81,8 +81,22 @@
   .button:hover {
     background-color: #53aed4;
   }
-  
-  
+
+  .card-image {
+    position: absolute; /* Posiciona a imagem dentro da div */
+    top: 0; /* Garante que comece no topo */
+    left: 0; /* Garante que comece na borda esquerda */
+    width: 100%; /* Largura completa da div */
+    height: 100%; /* Altura completa da div */
+    object-fit: cover; /* Ajusta a imagem para cobrir toda a área sem distorcer */
+    z-index: 0; /* Ajustado para garantir que esteja no mesmo plano */
+    opacity: 1; /* Torna a imagem visível */
+    transition: opacity 0.3s ease-in-out; /* Adiciona uma transição suave */
+}
+
+.card:hover .card-image {
+  opacity: 0.7; /* Reduz a opacidade no hover */
+}
   
   
   

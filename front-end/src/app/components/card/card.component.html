@@ -1,10 +1,11 @@
 <div class="container">
     <div class="card">
-        <p class="title">Card title</p>
+        <img [src]="imagem" alt="{{ titulo }}" class="card-image" />
+        <p class="title">{{titulo}}</p>
         <div class="card-hidden">
-            <p class="title-in">Card title</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at est orci. Nam molestie pellentesque mi nec lacinia.</p>
-            <a class="button">Button</a>
+            <p class="title-in">{{titulo}}</p>
+            <p>{{descricao}}</p>
+            <a class="button">Ver mais</a>
         </div>
 
     </div>
