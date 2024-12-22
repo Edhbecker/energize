@@ -1,0 +1,8 @@
+<div class="carousel">
+    <div class="carousel-track" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+      <img *ngFor="let image of images" [src]="image" class="carousel-image" alt="Imagem do Carrossel">
+    </div>
+    <button class="carousel-button prev" (click)="prevSlide()">&lt;</button>
+    <button class="carousel-button next" (click)="nextSlide()">&gt;</button>
+  </div>
+  
