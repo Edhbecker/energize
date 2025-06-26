@@ -5,6 +5,14 @@
     --burger-offset: 0.3em; /* Reduz a distância entre as linhas */
     --nav-default-scale: 0.6; /* Reduz a escala padrão do popup */
     --nav-active-scale: 0.8; /* Reduz a escala ativa do popup */
+
+@media (max-width: 768px) {
+.popup {
+    --burger-diameter: 1.8em;
+    --burger-line-width: 0.6em;
+    --nav-default-scale: 0.5;
+    --nav-active-scale: 0.7;
+}
     /*--burger-line-width: 1.125em;
     --burger-line-height: 0.125em;
     --burger-offset: 0.625em;

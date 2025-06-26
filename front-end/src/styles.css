@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     /*Adicionado font Andika como padrão*/
@@ -8,6 +12,41 @@ body {
     font-weight: 400;
     font-style: normal;
     background: #F9F4CE; /*Alterado a cor para #F9F4CE como padrão de todas as páginas*/
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Responsive utilities */
+.mobile-hidden {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+    
+    .mobile-only {
+        display: block;
+    }
 }
 
   

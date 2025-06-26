@@ -1,11 +1,22 @@
 .radio-inputs {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   border-radius: 0.5rem;
   background-color: #312F18;
   box-sizing: border-box;
   width: 100%;
   padding: 1rem 1rem 0 1rem;
+  min-height: 60px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .radio-inputs {
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 .radio-inputs .radio input {
@@ -24,6 +35,24 @@
   color: white;
   transition: all 0.15s ease-in-out;
   position: relative;
+  white-space: nowrap;
+  font-size: 1rem;
+  min-height: 40px;
+}
+
+@media (max-width: 768px) {
+  .radio-inputs .radio .name {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    min-height: 35px;
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .radio-inputs .radio input:checked + .name::after,
+  .radio-inputs .radio input:checked + .name::before {
+    display: none;
+  }
 }
 
 .radio-inputs .radio input:checked + .name {
@@ -59,6 +88,21 @@
   box-shadow: 3px 3px 0px 3px #F9F4CE; /*COR do fundo da aba 2 (opção) (deve ser igual ao fundo da pagina)*/
 }
 
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-links {
+  display: flex;
+  flex: 1;
+}
+
+.user-section {
+  position: relative;
+}
+
 .user{
   display: flex; /* Torna a div um container flexível */
   align-items: center; /* Centraliza verticalmente */
@@ -68,4 +112,35 @@
   top: 50%; /* Alinha verticalmente no meio */
   transform: translateY(-50%); /* Ajusta para centralizar perfeitamente */
   padding: 0 10px; /* Espaçamento interno opcional */
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .radio-inputs {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  
+  .nav-links {
+    order: 2;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .user-section {
+    order: 1;
+    margin-bottom: 0.5rem;
+  }
+  
+  .user {
+    position: static;
+    transform: none;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+  }
 }
