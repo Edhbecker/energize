@@ -3,6 +3,6 @@
       <img *ngFor="let image of images" [src]="image" class="carousel-image" alt="Imagem do Carrossel">
     </div>
     <button class="carousel-button prev" (click)="prevSlide()">&lt;</button>
-    <button class="carousel-button next" (click)="nextSlide()">&gt;</button>
+    <button class="carousel-button next" (click)="onNextClick()">&gt;</button>
   </div>
   

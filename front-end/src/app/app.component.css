@@ -63,18 +63,7 @@
   transform: translateY(-1px);
 }
 
-/* Indicador visual adicional para o estado ativo */
-.radio .name.active::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-}
+/* Indicador visual adicional para o estado ativo removido */
 
 .user-section {
   display: flex;
