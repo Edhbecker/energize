@@ -1,17 +1,32 @@
 <div class="home-container">
+  <!-- Seção de pesquisa -->
   <app-pesquisa></app-pesquisa>
 
+  <!-- Carrossel de destaque -->
   <app-carrossel></app-carrossel>
 
-  <div class="container">
-    <div class="card-wrapper">
-      <div class="card-item" *ngFor="let card of cards">
-        <app-card 
-          [titulo]="card.titulo" 
-          [descricao]="card.descricao" 
-          [categoria]="card.categoria" 
-          [imagem]="card.imagem">
-        </app-card>
+  <!-- Seção de produtos -->
+  <div class="products-section">
+    <div class="decorative-element"></div>
+    <div class="decorative-element"></div>
+    
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nossos Produtos Naturais</h2>
+        <p class="section-description">
+          Descubra nossa seleção cuidadosa de produtos naturais para seu bem-estar e saúde
+        </p>
+      </div>
+      
+      <div class="card-wrapper">
+        <div class="card-item" *ngFor="let card of cards; let i = index">
+          <app-card 
+            [titulo]="card.titulo" 
+            [descricao]="card.descricao" 
+            [categoria]="card.categoria" 
+            [imagem]="card.imagem">
+          </app-card>
+        </div>
       </div>
     </div>
   </div>

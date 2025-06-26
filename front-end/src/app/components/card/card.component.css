@@ -1,103 +1,237 @@
-.container {
-    position: relative;
-    width: 190px;
-    height: 254px;
-  }
-  
-  .card {
-    position: relative;
-    width: 190px;
-    height: 254px;
-    background: #f5f5f5;
-    border-radius: 8px;
-    color: #232323;
-    padding: 16px;
-    border: 1px solid #232323;
-    transition: all .5s ease-in-out;
-    overflow: hidden;
-  }
-  
-  .card-hidden {
-    display: flex;
-    transform: translateY(200%);
-    flex-direction: column;
-    gap: .5rem;
-    transition: transform .5s ease-in, opacity .3s ease-in;
-    opacity: 0;
-  }
-  
-  .card-border {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    border: 1px dashed #232323;
-    border-radius: 8px;
-    z-index: -1;
-  }
-  
-  /*Hovers*/
-  .card:hover {
-    transform: translate(-15px, -15px);
-    border-color: #5bc0eb;
-  }
-  
-  .card:hover .card-hidden {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  
-  .card:hover .title {
-    transform: translateY(200%);
-  }
-  
-  /*Text*/
-  .title {
-    position: absolute;
-    bottom: -1rem; /*Ajuste para sair o title principal do card, após transição*/
-    font-weight: 700;
-    font-size: 1.5rem;
-    transition: transform .25s ease-out;
-  }
-  
-  .title-in {
-    font-weight: 700;
-    font-size: 1.25rem;
-  }
-  
-  /*Button*/
-  .button {
-    display: inline-flex;
-    justify-content: center;
-    padding: 8px;
-    border-radius: 24px;
-    font-weight: 600;
-    background-color: #5bc0eb;
-    cursor: pointer;
-    transition: background-color .3s ease-in-out;
-  }
-  
-  .button:hover {
-    background-color: #53aed4;
-  }
 
-  .card-image {
-    position: absolute; /* Posiciona a imagem dentro da div */
-    top: 0; /* Garante que comece no topo */
-    left: 0; /* Garante que comece na borda esquerda */
-    width: 100%; /* Largura completa da div */
-    height: 100%; /* Altura completa da div */
-    object-fit: cover; /* Ajusta a imagem para cobrir toda a área sem distorcer */
-    z-index: 0; /* Ajustado para garantir que esteja no mesmo plano */
-    opacity: 1; /* Torna a imagem visível */
-    transition: opacity 0.3s ease-in-out; /* Adiciona uma transição suave */
+.container {
+  position: relative;
+  perspective: 1000px;
+  margin: 1rem 0;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 400px;
+  border-radius: var(--radius-xl);
+  background: white;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(34, 197, 94, 0.1) 0%, 
+    rgba(16, 185, 129, 0.1) 50%, 
+    rgba(5, 150, 105, 0.1) 100%);
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 1;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  transition: var(--transition);
 }
 
 .card:hover .card-image {
-  opacity: 0.7; /* Reduz a opacidade no hover */
+  transform: scale(1.05);
 }
+
+.title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, 
+    rgba(255, 255, 255, 0.98) 0%, 
+    rgba(255, 255, 255, 0.95) 70%, 
+    rgba(255, 255, 255, 0.8) 100%);
+  backdrop-filter: blur(10px);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  transition: var(--transition);
+  z-index: 2;
+}
+
+.card-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.95) 0%, 
+    rgba(16, 185, 129, 0.95) 50%, 
+    rgba(5, 150, 105, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  border-radius: var(--radius-xl);
+  z-index: 3;
+}
+
+.card:hover .card-hidden {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-hidden .title-in {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-hidden p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 250px;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: white;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+  border: 2px solid transparent;
+}
+
+.button:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.card-border {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    var(--primary-color), 
+    var(--accent-color), 
+    var(--primary-light));
+  border-radius: var(--radius-xl);
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.card:hover .card-border {
+  opacity: 1;
+}
+
+/* Efeito de brilho */
+.card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    transparent 70%);
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  transition: transform 0.6s ease;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .card {
+    max-width: 280px;
+    height: 350px;
+  }
   
+  .card-image {
+    height: 200px;
+  }
   
+  .title {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
   
+  .card-hidden {
+    padding: 1.5rem;
+  }
   
+  .card-hidden .title-in {
+    font-size: 1.25rem;
+  }
+  
+  .card-hidden p {
+    font-size: 0.9rem;
+  }
+  
+  .button {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 100%;
+    height: 320px;
+  }
+  
+  .card-image {
+    height: 180px;
+  }
+  
+  .title {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
