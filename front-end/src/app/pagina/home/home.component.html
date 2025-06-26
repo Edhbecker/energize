@@ -6,7 +6,7 @@
   <div class="products-section">
     <div class="decorative-element"></div>
     <div class="decorative-element"></div>
-    
+
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Nossos Produtos Naturais</h2>
@@ -14,12 +14,12 @@
           Descubra nossa seleção cuidadosa de produtos naturais para seu bem-estar e saúde
         </p>
       </div>
-      
+
       <!-- Seção de pesquisa -->
       <app-pesquisa></app-pesquisa>
-      
+
       <div class="card-wrapper">
-        <div class="card-item" *ngFor="let card of cards; let i = index">
+        <div class="card-item" *ngFor="let card of cardsFiltrados; let i = index">
           <app-card 
             [titulo]="card.titulo" 
             [descricao]="card.descricao" 
@@ -30,6 +30,6 @@
       </div>
     </div>
   </div>
- 
+
   <app-footer></app-footer>
 </div>

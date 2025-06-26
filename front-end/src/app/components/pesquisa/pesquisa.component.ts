@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 export class PesquisaComponent {
   searchTerm: string = '';
   activeFilter: string = 'todos';
+
+  @Output() categoriaFiltrada = new EventEmitter<string>();
 
   onSearchInput(event: any) {
     this.searchTerm = event.target.value;
@@ -36,6 +38,9 @@ export class PesquisaComponent {
   filterBy(category: string) {
     this.activeFilter = category;
     console.log('Filtro selecionado:', category);
+    
+    // Emitir evento para o componente pai
+    this.categoriaFiltrada.emit(category);
     
     // Remover classe active de todos os filtros e adicionar ao selecionado
     const filterChips = document.querySelectorAll('.filter-chip');

@@ -18,31 +18,31 @@ export class HomeComponent {
     { 
       titulo: 'Óleo de Coco', 
       descricao: 'Óleo de coco 100% natural para uso culinário e estético.', 
-      categoria: 'Alimentação Saudável', 
+      categoria: 'Óleos', 
       imagem: 'assets/imagens/image4.jpg' 
     },
     { 
       titulo: 'Chá Verde', 
       descricao: 'Chá verde orgânico com propriedades antioxidantes.', 
-      categoria: 'Fitoterápicos', 
+      categoria: 'Chás', 
       imagem: 'assets/imagens/image4.jpg' 
     },
     { 
       titulo: 'Shampoo Natural', 
       descricao: 'Shampoo livre de parabenos e sulfatos, ideal para cabelos sensíveis.', 
-      categoria: 'Cuidados Pessoais', 
+      categoria: 'Cosméticos', 
       imagem: 'assets/imagens/image4.jpg' 
     },
     { 
       titulo: 'Protetor Solar Natural', 
       descricao: 'Protetor solar ecológico e biodegradável.', 
-      categoria: 'Cuidados Pessoais', 
+      categoria: 'Cosméticos', 
       imagem: 'assets/imagens/image4.jpg' 
     },
     { 
       titulo: 'Farinha de Amêndoas', 
       descricao: 'Farinha de amêndoas para receitas sem glúten.', 
-      categoria: 'Alimentação Saudável', 
+      categoria: 'Óleos', 
       imagem: 'assets/imagens/image4.jpg' 
     },
     { 
@@ -54,30 +54,28 @@ export class HomeComponent {
     { 
       titulo: 'Óleo Essencial de Lavanda', 
       descricao: 'Óleo essencial calmante e relaxante para aromaterapia.', 
-      categoria: 'Fitoterápicos', 
+      categoria: 'Óleos', 
       imagem: 'assets/imagens/image4.jpg' 
     },
     { 
       titulo: 'Granola Integral', 
       descricao: 'Granola integral com frutas secas, rica em fibras.', 
-      categoria: 'Alimentação Saudável', 
+      categoria: 'Chás', 
       imagem: 'assets/imagens/image4.jpg' 
     }
   ];
-  
 
-  
-
-  /*
-  categorias = ['Alimentação Saudável', 'Cuidados Pessoais', 'Fitoterápicos', 'Suplementos'];
   cardsFiltrados = this.cards;
-
-  // Categoria selecionada
-  categoriaSelecionada: string | null = null;
+  categoriaSelecionada: string = 'todos';
 
   filtrarPorCategoria(categoria: string) {
     this.categoriaSelecionada = categoria;
-    this.cardsFiltrados = this.cards.filter(card => card.categoria === categoria);
+    if (categoria === 'todos') {
+      this.cardsFiltrados = this.cards;
+    } else {
+      this.cardsFiltrados = this.cards.filter(card => 
+        card.categoria.toLowerCase() === categoria.toLowerCase()
+      );
+    }
   }
-    */
 }
