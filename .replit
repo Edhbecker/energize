@@ -1,0 +1,8 @@
+modules = ["nodejs-20", "web"]
+run = "ng serve"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "ng serve"]
