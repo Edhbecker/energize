@@ -13,9 +13,6 @@ import colaborador from "./controller/Colaborador.js";
 import veiculo from "./controller/Veiculo.js";
 import funcionario from "./controller/Funcionario.js";
 
-import usuario from "./controller/Usuario.js";
-import produto from "./controller/Produto.js";
-
 import "../back-end/model/Relacionamentos.js";
 
 
@@ -148,20 +145,9 @@ app.put("/veiculo/:idveiculo", veiculo.alterar);
 app.delete("/veiculo/:idveiculo", veiculo.excluir);
 //Avaliação - Fim
 
-// Rotas de autenticação
-app.post("/auth/registrar", usuario.registrar);
-app.post("/auth/login", usuario.login);
-app.post("/auth/google", usuario.loginGoogle);
-app.post("/auth/apple", usuario.loginApple);
-app.get("/auth/perfil", usuario.verificarToken, usuario.perfil);
-app.get("/usuarios", usuario.verificarToken, usuario.verificarAdmin, usuario.listar);
 
-// Rotas de produtos
-app.get("/produtos", produto.listar);
-app.get("/produtos/:idproduto", produto.selecionar);
-app.post("/produtos", usuario.verificarToken, usuario.verificarAdmin, produto.criar);
-app.put("/produtos/:idproduto", usuario.verificarToken, usuario.verificarAdmin, produto.alterar);
-app.delete("/produtos/:idproduto", usuario.verificarToken, usuario.verificarAdmin, produto.excluir);
-app.get("/produtos/categoria/:categoria", produto.listarPorCategoria);
+
+
+
 
 app.listen(5000);

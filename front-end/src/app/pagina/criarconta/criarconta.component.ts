@@ -1,9 +1,8 @@
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-criarconta',
@@ -13,40 +12,49 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './criarconta.component.css'
 })
 export class CriarcontaComponent {
-  nome: string = '';
-  email: string = '';
-  password: string = '';
-  confirmPassword: string = '';
+  formData = {
+    nome: '',
+    email: '',
+    telefone: '',
+    senha: '',
+    confirmarSenha: ''
+  };
+  
+  aceiteTermos: boolean = false;
+  receberEmails: boolean = false;
   isLoading: boolean = false;
-  errorMessage: string = '';
-
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) {}
 
   onSubmit() {
-    if (this.password !== this.confirmPassword) {
-      this.errorMessage = 'As senhas não coincidem';
-      return;
-    }
-
-    if (this.nome && this.email && this.password) {
+    if (this.isFormValid()) {
       this.isLoading = true;
-      this.errorMessage = '';
-      
-      this.authService.registrar(this.nome, this.email, this.password).subscribe({
-        next: (response) => {
-          console.log('Conta criada com sucesso:', response);
-          this.isLoading = false;
-          this.router.navigate(['/home']);
-        },
-        error: (error) => {
-          console.error('Erro ao criar conta:', error);
-          this.errorMessage = error.error?.error || 'Erro ao criar conta';
-          this.isLoading = false;
-        }
-      });
+      // Simular cadastro - implementar lógica real aqui
+      setTimeout(() => {
+        console.log('Cadastro realizado:', this.formData);
+        this.isLoading = false;
+        // Redirecionar após cadastro bem-sucedido
+      }, 1500);
     }
+  }
+
+  isFormValid(): boolean {
+    return !!(
+      this.formData.nome &&
+      this.formData.email &&
+      this.formData.telefone &&
+      this.formData.senha &&
+      this.formData.confirmarSenha &&
+      this.formData.senha === this.formData.confirmarSenha &&
+      this.aceiteTermos
+    );
+  }
+
+  signupWithGoogle() {
+    console.log('Cadastro com Google');
+    // Implementar integração com Google OAuth
+  }
+
+  signupWithApple() {
+    console.log('Cadastro com Apple');
+    // Implementar integração com Apple Sign-In
   }
 }

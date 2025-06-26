@@ -5,8 +5,6 @@ import emprestimo from './EmprestimoModel.js';
 import livro from './LivroModel.js';
 import livroautor from './LivroAutorModel.js';
 import pessoa from './PessoaModel.js';
-import usuario from './UsuarioModel.js';
-import produto from './ProdutoModel.js';
 
 categoria.hasMany(livro, {foreignKey: 'idcategoria'});
 livro.belongsTo(categoria, {as: 'categoria', foreignKey: "idcategoria"});
