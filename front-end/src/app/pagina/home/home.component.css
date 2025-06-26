@@ -1,7 +1,7 @@
 
 .home-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #F9F4CE 0%, #FEFBF3 50%, #ffffff 100%);
   animation: fadeIn 0.8s ease-out;
 }
 
@@ -17,7 +17,7 @@
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--sunflower-yellow));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -47,7 +47,7 @@
   transform: translate(-50%, -50%);
   width: 100px;
   height: 2px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(90deg, var(--primary-color), var(--sunflower-yellow));
   border-radius: 1px;
 }
 

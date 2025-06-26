@@ -7,20 +7,23 @@
 }
 
 :root {
-  --primary-color: #22c55e;
-  --primary-dark: #16a34a;
-  --primary-light: #4ade80;
-  --secondary-color: #f8fafc;
-  --accent-color: #059669;
-  --text-primary: #1f2937;
-  --text-secondary: #6b7280;
-  --text-light: #9ca3af;
+  --primary-color: #F4A261;
+  --primary-dark: #E76F51;
+  --primary-light: #F9F4CE;
+  --secondary-color: #F9F4CE;
+  --accent-color: #2A9D8F;
+  --text-primary: #264653;
+  --text-secondary: #577A7C;
+  --text-light: #8FA3A5;
   --background-primary: #ffffff;
-  --background-secondary: #f9fafb;
-  --border-color: #e5e7eb;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --background-secondary: #FEFBF3;
+  --border-color: #F4E4BC;
+  --sunflower-yellow: #FFD60A;
+  --sunflower-brown: #8B4513;
+  --sunflower-green: #2A9D8F;
+  --shadow-sm: 0 1px 2px 0 rgba(244, 162, 97, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(244, 162, 97, 0.15), 0 2px 4px -2px rgba(244, 162, 97, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(244, 162, 97, 0.2), 0 4px 6px -4px rgba(244, 162, 97, 0.1);
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -32,7 +35,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--background-primary);
+  background: linear-gradient(135deg, #F9F4CE 0%, #FEFBF3 50%, #ffffff 100%);
   overflow-x: hidden;
 }
 
@@ -46,12 +49,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--sunflower-yellow));
   border-radius: var(--radius-lg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
 }
 
 /* Utilitários */

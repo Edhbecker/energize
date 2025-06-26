@@ -1,6 +1,6 @@
 .app-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #F9F4CE 0%, #FEFBF3 50%, #ffffff 100%);
 }
 
 .radio-inputs {
@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(249, 244, 206, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   padding: 1rem 2rem;
@@ -52,13 +52,13 @@
 /* Estado padrão dos links */
 .radio .name:hover {
   color: var(--primary-color);
-  background: rgba(34, 197, 94, 0.1);
+  background: rgba(244, 162, 97, 0.1);
 }
 
 /* Estado ativo usando a classe router-link-active do Angular */
 .radio .name.active {
   color: white;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary-color), var(--sunflower-yellow));
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }

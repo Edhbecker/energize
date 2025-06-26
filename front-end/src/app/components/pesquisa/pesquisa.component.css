@@ -95,7 +95,7 @@
   left: 48px;
   right: 16px;
   height: 2px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(90deg, var(--primary-color), var(--sunflower-yellow));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -112,7 +112,7 @@
   justify-content: center;
   gap: 8px;
   padding: 12px 20px;
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary-color), var(--sunflower-yellow));
   color: white;
   border: none;
   border-radius: 18px;
@@ -123,7 +123,7 @@
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  box-shadow: 0 4px 12px rgba(244, 162, 97, 0.3);
 }
 
 .search-button::before {
@@ -143,8 +143,8 @@
 
 .search-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+  box-shadow: 0 6px 20px rgba(244, 162, 97, 0.4);
+  background: linear-gradient(135deg, var(--sunflower-yellow), var(--primary-color));
 }
 
 .search-button:active {
@@ -191,7 +191,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--sunflower-yellow));
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -206,7 +206,7 @@
   color: white;
   border-color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  box-shadow: 0 4px 12px rgba(244, 162, 97, 0.3);
 }
 
 .filter-chip:hover::before,
