@@ -1,3 +1,4 @@
+
 import { Component, ElementRef, HostListener, AfterViewInit, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -34,7 +35,9 @@ export class UserdeslogadoComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit() {
     const checkbox = this.elRef.nativeElement.querySelector('input[type="checkbox"]');
-    checkbox.checked = false; // Garantir que o checkbox está desmarcado ao iniciar
+    if (checkbox) {
+      checkbox.checked = false; // Garantir que o checkbox está desmarcado ao iniciar
+    }
   }
 
   entrarClick() {
@@ -46,13 +49,14 @@ export class UserdeslogadoComponent implements AfterViewInit, OnInit {
     this.authService.logout();
     this.router.navigate(['/']);
   }
-  }
 
   // Método para detectar cliques fora da popup
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     const popup = this.elRef.nativeElement.querySelector('.popup');
     const inputCheckbox = this.elRef.nativeElement.querySelector('input[type="checkbox"]');
+    
+    if (!popup || !inputCheckbox) return;
     
     // Verifica se o clique foi dentro de um botão
     const clickedButton = (event.target as HTMLElement).closest('button');
