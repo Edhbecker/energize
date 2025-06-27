@@ -16,7 +16,7 @@
       </div>
 
       <!-- Seção de pesquisa -->
-      <app-pesquisa></app-pesquisa>
+      <app-pesquisa (categoriaFiltrada)="filtrarPorCategoria($event)"></app-pesquisa>
 
       <div class="card-wrapper">
         <div class="card-item" *ngFor="let card of cardsFiltrados; let i = index">

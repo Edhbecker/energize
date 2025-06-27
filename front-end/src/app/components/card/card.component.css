@@ -1,4 +1,3 @@
-
 .container {
   position: relative;
   perspective: 1000px;
@@ -192,28 +191,28 @@
     max-width: 280px;
     height: 350px;
   }
-  
+
   .card-image {
     height: 200px;
   }
-  
+
   .title {
     font-size: 1.1rem;
     padding: 1rem;
   }
-  
+
   .card-hidden {
     padding: 1.5rem;
   }
-  
+
   .card-hidden .title-in {
     font-size: 1.25rem;
   }
-  
+
   .card-hidden p {
     font-size: 0.9rem;
   }
-  
+
   .button {
     padding: 0.5rem 1.5rem;
     font-size: 0.875rem;
@@ -225,13 +224,28 @@
     max-width: 100%;
     height: 320px;
   }
-  
+
   .card-image {
     height: 180px;
   }
-  
+
   .title {
     font-size: 1rem;
     padding: 0.75rem;
   }
+}
+.card-category {
+  display: inline-block;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, var(--primary-color), var(--sunflower-yellow));
+  color: white !important;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(244, 162, 97, 0.3);
+  opacity: 1 !important;
+  visibility: visible !important;
 }
