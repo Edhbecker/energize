@@ -41,17 +41,5 @@ export class PesquisaComponent {
     
     // Emitir evento para o componente pai
     this.categoriaFiltrada.emit(category);
-    
-    // Remover classe active de todos os filtros e adicionar ao selecionado
-    const filterChips = document.querySelectorAll('.filter-chip');
-    filterChips.forEach(chip => chip.classList.remove('active'));
-    
-    const activeChip = Array.from(filterChips).find(chip => 
-      chip.textContent?.toLowerCase().includes(category) || category === 'todos'
-    );
-    
-    if (activeChip) {
-      activeChip.classList.add('active');
-    }
   }
 }
