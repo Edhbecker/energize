@@ -1,9 +1,10 @@
-import { Component, ElementRef, HostListener, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, HostListener, AfterViewInit, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { RouterLinkActive } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
+import { AuthService, User } from '../../services/auth.service';
 
 @Component({
   selector: 'app-userdeslogado',
@@ -12,13 +13,39 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './userdeslogado.component.html',
   styleUrls: ['./userdeslogado.component.css']
 })
-export class UserdeslogadoComponent implements AfterViewInit {
+export class UserdeslogadoComponent implements AfterViewInit, OnInit {
+  isLoggedIn = false;
+  isAdmin = false;
+  currentUser: User | null = null;
 
-  constructor(private elRef: ElementRef, private router: Router) {}
+  constructor(
+    private elRef: ElementRef, 
+    private router: Router,
+    private authService: AuthService
+  ) {}
+
+  ngOnInit() {
+    this.authService.currentUser$.subscribe(user => {
+      this.currentUser = user;
+      this.isLoggedIn = this.authService.isLoggedIn();
+      this.isAdmin = this.authService.isAdmin();
+    });
+  }
 
   ngAfterViewInit() {
     const checkbox = this.elRef.nativeElement.querySelector('input[type="checkbox"]');
     checkbox.checked = false; // Garantir que o checkbox está desmarcado ao iniciar
+  }
+
+  entrarClick() {
+    console.log('Clique em Entre');
+    this.router.navigate(['/login']);
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
   }
 
   // Método para detectar cliques fora da popup

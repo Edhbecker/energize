@@ -27,3 +27,28 @@
     </ul>
   </nav>
 </div>
+
+<nav class="nav">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+  <a routerLink="/sobrenos" routerLinkActive="active">Sobre Nós</a>
+  <a *ngIf="isAdmin" routerLink="/cadastro" routerLinkActive="active">Cadastro</a>
+</nav>
+
+<div class="dropdown-content">
+  <div *ngIf="!isLoggedIn">
+    <a (click)="entrarClick()">
+      <i class="fas fa-key"></i>
+      Entre
+    </a>
+  </div>
+  <div *ngIf="isLoggedIn">
+    <div class="user-info">
+      <p><strong>{{currentUser?.nome}}</strong></p>
+      <p>{{currentUser?.perfil}}</p>
+    </div>
+    <a (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i>
+      Sair
+    </a>
+  </div>
+</div>

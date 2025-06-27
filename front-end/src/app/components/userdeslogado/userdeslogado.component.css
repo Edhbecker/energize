@@ -162,3 +162,29 @@ svg {
     min-width: 180px;
   }
 }
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.user-info {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.user-info p:first-child {
+  color: #333;
+  font-weight: bold;
+}
+
+.user-info p:last-child {
+  color: #666;
+  font-size: 12px;
+  text-transform: uppercase;
+}

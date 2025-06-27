@@ -4,12 +4,13 @@ import { LoginComponent } from './pagina/login/login.component';
 import { CriarcontaComponent } from './pagina/criarconta/criarconta.component';
 import { CadastroComponent } from './pagina/cadastro/cadastro.component';
 import { SobrenosComponent } from './pagina/sobrenos/sobrenos.component';
+import { AdminGuard } from './guards/admin.guard';
 
 
 export const routes: Routes = [
     { path: '', component:  HomeComponent},
     { path: 'login', component: LoginComponent},
     { path: 'signup', component: CriarcontaComponent },
-    { path: 'cadastro', component: CadastroComponent },
+    { path: 'cadastro', component: CadastroComponent, canActivate: [AdminGuard] },
     { path: 'sobrenos', component: SobrenosComponent }
 ];

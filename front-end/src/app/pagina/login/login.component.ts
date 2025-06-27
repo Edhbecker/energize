@@ -1,8 +1,9 @@
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AuthService, User } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,15 +16,32 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
   isLoading: boolean = false;
+  errorMessage: string = '';
+  usuariosFicticios: User[] = [];
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.usuariosFicticios = this.authService.getUsuariosFicticios();
+  }
 
   onSubmit() {
     if (this.email && this.password) {
       this.isLoading = true;
-      // Simular login - implementar lógica real aqui
+      this.errorMessage = '';
+      
       setTimeout(() => {
-        console.log('Login realizado:', { email: this.email, password: this.password });
+        const loginSuccess = this.authService.login(this.email, this.password);
+        
+        if (loginSuccess) {
+          console.log('Login realizado com sucesso');
+          this.router.navigate(['/']);
+        } else {
+          this.errorMessage = 'Email não encontrado. Use um dos emails de teste.';
+        }
+        
         this.isLoading = false;
-        // Redirecionar após login bem-sucedido
       }, 1500);
     }
   }

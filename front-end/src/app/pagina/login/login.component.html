@@ -1,6 +1,20 @@
 
 <div class="form-container">
   <p class="title">Bem-vindo de volta</p>
+  
+  <!-- Usuários para teste -->
+  <div class="test-users" style="margin-bottom: 20px; padding: 15px; background-color: #f0f0f0; border-radius: 8px;">
+    <h4 style="margin: 0 0 10px 0; color: #333;">Usuários para teste:</h4>
+    <div *ngFor="let usuario of usuariosFicticios" style="margin-bottom: 8px;">
+      <strong>{{usuario.perfil}}:</strong> {{usuario.email}} (qualquer senha)
+      <button type="button" 
+              (click)="email = usuario.email; password = '123'"
+              style="margin-left: 10px; padding: 2px 8px; font-size: 12px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Usar
+      </button>
+    </div>
+  </div>
+
   <form class="form" (ngSubmit)="onSubmit()">
     <input 
       type="email" 
@@ -16,6 +30,11 @@
       [(ngModel)]="password"
       name="password"
       required>
+    
+    <div *ngIf="errorMessage" style="color: red; margin: 10px 0; text-align: center;">
+      {{errorMessage}}
+    </div>
+    
     <p class="page-link">
       <span class="page-link-label">Esqueceu a senha?</span>
     </p>
@@ -29,7 +48,7 @@
   </form>
   <p class="sign-up-label">
     Não tem uma conta?<a routerLink="/signup" class="sign-up-link">Criar conta</a>
-  </p>
+  </p>>
   <div class="buttons-container">
     <button class="apple-login-button" (click)="loginWithApple()">
       <svg stroke="currentColor" fill="currentColor" stroke-width="0" class="apple-icon" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
