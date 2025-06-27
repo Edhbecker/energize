@@ -186,34 +186,31 @@
   text-align: center;
 }
 
-.filter-chip::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, var(--primary-color), var(--sunflower-yellow));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .filter-chip span {
   position: relative;
   z-index: 1;
+  transition: color 0.3s ease;
 }
 
-.filter-chip:hover,
+/* Estado normal - hover apenas */
+.filter-chip:hover:not(.active) {
+  background: rgba(244, 162, 97, 0.1);
+  border-color: rgba(244, 162, 97, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(244, 162, 97, 0.2);
+}
+
+/* Estado ativo - fundo laranja e texto branco */
 .filter-chip.active {
-  color: white;
-  border-color: var(--primary-color);
+  background: linear-gradient(135deg, #f4a261, #f77f00);
+  border-color: #f4a261;
+  color: white !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(244, 162, 97, 0.3);
+  box-shadow: 0 4px 12px rgba(244, 162, 97, 0.4);
 }
 
-.filter-chip:hover::before,
-.filter-chip.active::before {
-  opacity: 1;
+.filter-chip.active span {
+  color: white !important;
 }
 
 /* Efeito de brilho no container */

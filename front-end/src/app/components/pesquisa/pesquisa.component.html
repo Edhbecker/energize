@@ -27,11 +27,36 @@
     
     <!-- Filtros rápidos -->
     <div class="quick-filters">
-      <span class="filter-chip active" (click)="filterBy('todos')">Todos</span>
-      <span class="filter-chip" (click)="filterBy('óleos')">Óleos Essenciais</span>
-      <span class="filter-chip" (click)="filterBy('chás')">Chás</span>
-      <span class="filter-chip" (click)="filterBy('suplementos')">Suplementos</span>
-      <span class="filter-chip" (click)="filterBy('cosméticos')">Cosméticos</span>
+      <span 
+        class="filter-chip" 
+        [class.active]="activeFilter === 'todos'" 
+        (click)="filterBy('todos')">
+        <span>Todos</span>
+      </span>
+      <span 
+        class="filter-chip" 
+        [class.active]="activeFilter === 'óleos'" 
+        (click)="filterBy('óleos')">
+        <span>Óleos Essenciais</span>
+      </span>
+      <span 
+        class="filter-chip" 
+        [class.active]="activeFilter === 'chás'" 
+        (click)="filterBy('chás')">
+        <span>Chás</span>
+      </span>
+      <span 
+        class="filter-chip" 
+        [class.active]="activeFilter === 'suplementos'" 
+        (click)="filterBy('suplementos')">
+        <span>Suplementos</span>
+      </span>
+      <span 
+        class="filter-chip" 
+        [class.active]="activeFilter === 'cosméticos'" 
+        (click)="filterBy('cosméticos')">
+        <span>Cosméticos</span>
+      </span>
     </div>
   </div>
 </div>
